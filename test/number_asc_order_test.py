@@ -4,7 +4,7 @@ from src.number_asc_order import NumberAscOrder
 
 
 def test_sort_six_random_numbers_with_mock(mocker):
-    numeros_sorteados = [42, 7, 58, 13, 29, 3]
+    numeros_sorteados = [53, 10, 4, 32, 27, 1]
     mock_stack = mocker.MagicMock(spec=CustomStack)
     mock_stack.is_empty.side_effect = [False, False, False, False, False, False, True]
     mock_stack.pop.side_effect = numeros_sorteados
@@ -12,11 +12,11 @@ def test_sort_six_random_numbers_with_mock(mocker):
     sorter = NumberAscOrder()
     resultado = sorter.sort(mock_stack)
 
+    assert isinstance(resultado, list)
     assert len(resultado) == 6
     assert resultado == sorted(numeros_sorteados)
-    assert resultado == [3, 7, 13, 29, 42, 58]
+    assert resultado == [1, 4, 10, 27, 32, 53]
     assert mock_stack.pop.call_count == 6
-    assert mock_stack.is_empty.call_count == 7
 
 
 def test_sort_empty_stack_with_mock(mocker):

@@ -10,3 +10,4 @@ pip install -r requirements.txt
 ```sh
 python -m pytest ./test/* --cov
 ```
+

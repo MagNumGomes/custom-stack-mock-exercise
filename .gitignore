@@ -1,8 +1,10 @@
 venv/
 .venv/
 __pycache__/
+*.pyc
 .pytest_cache/
 .coverage
 htmlcov/
-*.pyc
-custom-stack.zip
+__MACOSX/
+.vscode/
+*.zip
